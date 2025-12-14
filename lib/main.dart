@@ -13,18 +13,19 @@ class GoSportApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'GoSport App',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: false, 
         primarySwatch: Colors.teal,
+        scaffoldBackgroundColor: Colors.grey[100],
+        fontFamily: 'Roboto',
       ),
-      // El Navegante: Rutas Anónimas
+      // El Navegante: Rutas Nombradas (como en tu estructura original)
       initialRoute: '/',
       routes: {
-        // CORRECCIÓN DE ERROR FATAL: Quitamos 'const' de la llamada a la clase,
-        // ya que la función anónima (context) => ... no es constante.
-        '/': (context) => LoginScreen(), 
-        '/register': (context) => RegisterScreen(), 
-        '/home': (context) => HomeScreen(), 
+        '/': (context) => const LoginScreen(), 
+        '/register': (context) => const RegisterScreen(), 
+        '/home': (context) => const HomeScreen(), 
       },
     );
   }
